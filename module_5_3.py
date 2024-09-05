@@ -19,32 +19,32 @@ class House:
     def __eq__(self, other):
         if isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
-        return False
+        raise TypeError(f"Неподдерживаемый операнд: {type(other)}")
 
     def __lt__(self, other):
         if isinstance(other, House):
             return self.number_of_floors < other.number_of_floors
-        return False
+        raise TypeError(f"Неподдерживаемый операнд: {type(other)}")
 
     def __le__(self, other):
         if isinstance(other, House):
             return self.number_of_floors <= other.number_of_floors
-        return False
+        raise TypeError(f"Неподдерживаемый операнд: {type(other)}")
 
     def __gt__(self, other):
         if isinstance(other, House):
             return self.number_of_floors > other.number_of_floors
-        return False
+        raise TypeError(f"Неподдерживаемый операнд: {type(other)}")
 
     def __ge__(self, other):
         if isinstance(other, House):
             return self.number_of_floors >= other.number_of_floors
-        return False
+        raise TypeError(f"Неподдерживаемый операнд: {type(other)}")
 
     def __ne__(self, other):
         if isinstance(other, House):
             return self.number_of_floors != other.number_of_floors
-        return True
+        raise TypeError(f"Неподдерживаемый операнд: {type(other)}")
 
     def add(self, value):
         if isinstance(value, int):
@@ -60,6 +60,7 @@ class House:
     def __iadd__(self, value):
         return self.add(value)
 
+# Пример использования
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
 
